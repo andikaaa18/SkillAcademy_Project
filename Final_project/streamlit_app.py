@@ -55,7 +55,8 @@ def data_preprocessing(stock_data:pd.DataFrame):
         return data.drop(columns=columns)
     
     def features_scaling(data):
-        scaler = joblib.load("./assets/scaler.pkl")
+        # scaler = joblib.load("./assets/scaler.pkl")
+        scaler = joblib.load("Final_project/assets/scaler.pkl")
         scaling_data = scaler.transform(data)
         return scaling_data
 
@@ -77,7 +78,8 @@ def data_preprocessing(stock_data:pd.DataFrame):
 
 def forecasting(features):
     # memuat model
-    path = "./model/untr_stock_price_predictor.pt"
+    # path = "./model/untr_stock_price_predictor.pt"
+    path = "Final_project/model/untr_stock_price_predictor.pt"
     model = torch.jit.load(path)
     
     # forecasting
