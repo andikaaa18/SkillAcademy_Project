@@ -3,11 +3,17 @@ from datetime import timedelta
 import joblib
 import numpy as np
 import pandas as pd
+import path
 from plotly import graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
+import sys
 import torch
 import yfinance as yf
+
+# atur direktori induk
+dir = path.Path('__file__').abspath()
+sys.append.path(str(dir.parent.parent))
 
 
 def selected_date(bias=15):
