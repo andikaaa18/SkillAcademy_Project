@@ -55,7 +55,7 @@ def data_preprocessing(stock_data:pd.DataFrame):
         return data.drop(columns=columns)
     
     def features_scaling(data):
-        scaler = joblib.load("./scaler.pkl")
+        scaler = joblib.load(".\scaler.pkl")
         scaling_data = scaler.transform(data)
         return scaling_data
 
