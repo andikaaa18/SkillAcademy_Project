@@ -13,7 +13,7 @@ import yfinance as yf
 
 # atur direktori induk
 dir = path.Path('__file__').abspath()
-sys.path.append(str(dir.parent))
+sys.path.append(str(dir.parent.parent))
 
 
 def selected_date(bias=15):
@@ -61,7 +61,7 @@ def data_preprocessing(stock_data:pd.DataFrame):
         return data.drop(columns=columns)
     
     def features_scaling(data):
-        scaler = joblib.load("./scaler.pkl")
+        scaler = joblib.load("scaler.pkl")
         scaling_data = scaler.transform(data)
         return scaling_data
 
