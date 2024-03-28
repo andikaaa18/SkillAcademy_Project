@@ -12,8 +12,8 @@ import torch
 import yfinance as yf
 
 # mengatur direktori induk
-dir = path.Path(__file__).abspath()
-sys.path.append(dir.parent)
+# dir = path.Path(__file__).abspath()
+# sys.path.append(dir.parent)
 
 def selected_date(bias=15):
     ndays = 26 + bias
@@ -60,7 +60,7 @@ def data_preprocessing(stock_data:pd.DataFrame):
         return data.drop(columns=columns)
     
     def features_scaling(data):
-        scaler = joblib.load("./assets/scaler.pkl")
+        scaler = joblib.load("assets/scaler.pkl")
         scaling_data = scaler.transform(data)
         return scaling_data
 
