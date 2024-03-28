@@ -13,7 +13,7 @@ import yfinance as yf
 
 # atur direktori induk
 dir = path.Path('__file__').abspath()
-sys.append.path(str(dir.parent.parent))
+sys.path.append(str(dir.parent.parent))
 
 
 def selected_date(bias=15):
