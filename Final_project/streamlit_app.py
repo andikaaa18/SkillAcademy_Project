@@ -4,6 +4,7 @@ import joblib
 import numpy as np
 import pandas as pd
 import path
+import pathlib
 import sys
 from plotly import graph_objects as go
 from plotly.subplots import make_subplots
@@ -12,8 +13,8 @@ import torch
 import yfinance as yf
 
 # mengatur direktori induk
-# dir = path.Path(__file__).abspath()
-# sys.path.append(dir.parent)
+dir = pathlib.Path('__file__').parent.resolve()
+sys.path.append(str(dir))
 
 def selected_date(bias=15):
     ndays = 26 + bias
