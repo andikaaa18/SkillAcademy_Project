@@ -3,18 +3,12 @@ from datetime import timedelta
 import joblib
 import numpy as np
 import pandas as pd
-import path
-import pathlib
-import sys
 from plotly import graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
 import torch
 import yfinance as yf
 
-# mengatur direktori induk
-dir = pathlib.Path('__file__').parent.resolve()
-sys.path.append(str(dir))
 
 def selected_date(bias=15):
     ndays = 26 + bias
@@ -61,7 +55,7 @@ def data_preprocessing(stock_data:pd.DataFrame):
         return data.drop(columns=columns)
     
     def features_scaling(data):
-        scaler = joblib.load("assets/scaler.pkl")
+        scaler = joblib.load("./assets/scaler.pkl")
         scaling_data = scaler.transform(data)
         return scaling_data
 
