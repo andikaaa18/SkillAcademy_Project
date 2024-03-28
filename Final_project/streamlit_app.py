@@ -13,7 +13,7 @@ import yfinance as yf
 
 # mengatur direktori induk
 dir = path.Path(__file__).abspath()
-sys.path.append(dir.parent.parent)
+sys.path.append(dir.parent)
 
 def selected_date(bias=15):
     ndays = 26 + bias
